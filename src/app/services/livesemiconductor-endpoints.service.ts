@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable, of } from 'rxjs';
 import { Test } from '../models/livesemiconductor-endpoints/test';
 import { Process } from '../models/livesemiconductor-endpoints/process';
-import { Outcome } from '../models/livesemiconductor-endpoints/outcome';
 import { Semiconductor } from '../models/livesemiconductor-endpoints/semiconductor';
+import { Outcome } from '../models/livesemiconductor-endpoints/outcome';
 import { ErrorHandlerService } from './error-handler.service';
 
 const API_ENDPOINT = 'https://localhost:7173';

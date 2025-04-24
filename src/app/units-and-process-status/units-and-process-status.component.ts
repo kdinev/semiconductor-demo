@@ -3,8 +3,8 @@ import { IGX_DIALOG_DIRECTIVES, IGX_GRID_DIRECTIVES, IGX_LIST_DIRECTIVES, IgxBut
 import { Subject, take, takeUntil } from 'rxjs';
 import { Test } from '../models/livesemiconductor-endpoints/test';
 import { Process } from '../models/livesemiconductor-endpoints/process';
-import { Outcome } from '../models/livesemiconductor-endpoints/outcome';
 import { Semiconductor } from '../models/livesemiconductor-endpoints/semiconductor';
+import { Outcome } from '../models/livesemiconductor-endpoints/outcome';
 import { LIVESemiconductorEndpointsService } from '../services/livesemiconductor-endpoints.service';
 
 @Component({
