@@ -1,0 +1,60 @@
+<div class="column-layout group">
+  <igx-list class="list">
+    @for (item of lIVESemiconductorEndpointsSemiconductor; track item) {
+      <igx-list-item (click)="selectedSemiconductor = item">
+        <span igxListLineTitle>{{ item.type }}</span>
+        <span igxListLineSubTitle>{{ item.batchNumber }}</span>
+        <span igxListAction>
+          <igx-icon class="icon">
+            arrow_forward_ios
+          </igx-icon>
+        </span>
+      </igx-list-item>
+    }
+  </igx-list>
+</div>
+<div class="column-layout group_1">
+  <igx-grid [data]="lIVESemiconductorEndpointsProcess" primaryKey="id" [allowFiltering]="true" filterMode="excelStyleFilter" class="grid">
+    <igx-column field="id" dataType="number" header="id" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+    <igx-column field="semiconductorId" dataType="number" header="semiconductorId" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+    <igx-column field="processStep" dataType="string" header="processStep" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+    <igx-column field="processDate" dataType="date" header="processDate" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+    <igx-column field="outcome" dataType="string" header="outcome" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+  </igx-grid>
+  <igx-grid [data]="lIVESemiconductorEndpointsTest" primaryKey="id" rowSelection="single" [hideRowSelectors]="true" [allowFiltering]="true" filterMode="excelStyleFilter" (rowSelectionChanging)="rowSelectionChangingGrid($event)" class="grid_1">
+    <igx-column field="id" dataType="number" header="id" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+    <igx-column field="semiconductorId" dataType="number" header="semiconductorId" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+    <igx-column field="testName" dataType="string" header="testName" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+    <igx-column field="testDate" dataType="date" header="testDate" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+    <igx-column field="outcome" dataType="string" header="outcome" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+  </igx-grid>
+</div>
+<igx-dialog [closeOnOutsideSelect]="true" #dialog>
+  <igx-dialog-title>
+    <h5>
+      Test Outcome
+    </h5>
+  </igx-dialog-title>
+  <ng-container>
+    <div class="column-layout group_2">
+      <igx-list class="list">
+        @for (item of lIVESemiconductorEndpointsOutcome; track item) {
+          <igx-list-item>
+            <span igxListLineTitle>{{ item.outcomeResult }}</span>
+            <span igxListLineSubTitle>{{ item.description }}</span>
+            <span igxListAction>
+              <igx-icon class="icon">
+                star
+              </igx-icon>
+            </span>
+          </igx-list-item>
+        }
+      </igx-list>
+    </div>
+  </ng-container>
+  <igx-dialog-actions>
+    <button igxButton="flat" type="button" igxRipple class="button">
+      Button
+    </button>
+  </igx-dialog-actions>
+</igx-dialog>
